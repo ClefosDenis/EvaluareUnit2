@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<head>
+    
+    <title>Clefos Denis</title>
+    <link rel="stylesheet" href="stil.css">
+    
+   <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const slideshowContainer = document.querySelector('.slideshow-container');
+            const slides = document.querySelectorAll('.slide');
+            let currentSlide = 0;
+            let slideshowInterval;
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.classList.remove('active');
+                    if (i === index) {
+                        slide.classList.add('active');
+                    }
+                });
+            }
+
+            function startSlideshow() {
+                if (slideshowInterval) {
+                    clearInterval(slideshowInterval);
+                }
+                slideshowInterval = setInterval(() => {
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    showSlide(currentSlide);
+                }, 3000);
+            }
+
+            slideshowContainer.addEventListener('dblclick', function () {
+                console.log("Dublu click detectat!");
+                startSlideshow();
+            });
+        });
+    </script>
+
+</head>
+    
+<body>
+    <header>
+        <div class="name-box">
+            <h1>Clefos Denis</h1>  
+        </div>
+    </header>
+    <main>
+        <a href="mailto:Clefos.Io.Denis@student.utcluj.ro" class="email-link">Clefos.Io.Denis@student.utcluj.ro</a>
+        <div class="box">
+            <h2 id="titlu">Structura Retelei Personale</h2>
+            <img src="ip.png" class="profile-pic">
+            <section id="specifications">
+                <h2>Caracteristicile conexiunii la retea</h2>
+                <ul>
+                    <li><strong>Adresa MAC:</strong> 86-D3-28-D7-03-E8</li>
+                    <li><strong>Adresa IP:</strong> 192.168.0.1</li>
+                    <li><strong>Debit la download:</strong> 100 Mbps</li>
+                    <li><strong>Debit la upload:</strong> 50 Mbps</li>
+                </ul>
+            </section>
+        </div>
+
+        
+            <div class="center-container">
+    <h2 id="spteh">Specificatii tehnice ale statiei principale de lucru</h2>
+</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Denumire componentă</th>
+                        <th>Producător</th>
+                        <th>Parametri</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Procesor</td>
+                        <td>Intel</td>
+                        <td>Intel Core i5-1240P</td>
+                    </tr>
+                    <tr>
+                        <td>Memorie RAM</td>
+                        <td>Kingston</td>
+                        <td>16 GB</td>
+                    </tr>
+                    <tr>
+                        <td>Stocare</td>
+                        <td>Samsung</td>
+                        <td>1 TB SSD</td>
+                    </tr>
+                    <tr>
+                        <td>Placă video</td>
+                        <td>Intel</td>
+                        <td>Intel Iris Xe Graphics</td>
+                    </tr>
+                </tbody>
+            </table>
+    
+
+    <section id="monitoring">
+        <div class="slideshow-container-wrapper">
+            <div class="slideshow-title">Slideshow</div>
+            <div class="slideshow-instruction">Faceți dublu click pe imagine pentru slideshow</div>
+            <div class="slideshow-container">
+                <img src="m1.jpg" alt="Resursa 1" class="slide active">
+                <img src="m2.jpg" alt="Resursa 2" class="slide">
+                <img src="m3.jpg" alt="Resursa 3" class="slide">
+            </div>
+        </div>
+    </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Clefos Denis</p>
+    </footer>
+</body>
+
+</html>
